@@ -1,13 +1,14 @@
+import { Level } from "@/app/game-context/GameContext-old"
 import { Pressable, Text } from "react-native"
 
 export function LevelTile(props: {
-  levelNum: number
+  level: Level
   tileSize: number
-  onTilePress: (levelNum: number) => void
+  onTilePress: (level: Level) => void
 }) {
   return (
     <Pressable
-      onPress={() => props.onTilePress(props.levelNum)}
+      onPress={() => props.onTilePress(props.level)}
       style={{
         width: props.tileSize,
         aspectRatio: 1,
@@ -17,7 +18,7 @@ export function LevelTile(props: {
         alignItems: "center",
       }}
     >
-      <Text>{props.levelNum}</Text>
+      <Text>{props.level.levelNumber}</Text>
     </Pressable>
   )
 }

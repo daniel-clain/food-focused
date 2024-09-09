@@ -1,0 +1,2 @@
+* context type is what is exposed to front end components
+* components shouldnt have direct access to game state, eg should not be able to see set current level, only game manager is interface between them that exposes better functions

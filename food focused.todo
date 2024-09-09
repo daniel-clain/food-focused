@@ -1,0 +1,12 @@
+Game Design:
+  ☐ workout appropriate maths for exponential decay rate over time of different stats. unchanging for entire game
+  ☐ work out different level challenges, where objective, time duration, and exposed mechanics make player have different strategy to win that level. levels should start easy and get harder. levels success should be strongly tied to real life truth
+  ☐ game should be less based on speed, more based on thinking, understanding, strategy and timing
+
+Code Oranisation:
+  ☐ Design main game screen with dev UX focus, high level abstraction of all the main separation of concerns, and logically break down from there
+    ☐ Take as much code out of the main screen as possible, only simple components to make it clear what the abstractions are
+    ☐ Each abstraction can have its code and linked to the game state via context
+
+    
+

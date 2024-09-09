@@ -1,17 +1,21 @@
 import { View } from "react-native"
-import { MainNavLink } from "./components/MainNavLink"
+import { GameInterface } from "./Views/In Game/InGame"
+import LevelSelect from "./archive/level select old/LevelSelectold"
+import { GameProvider, useGameContext } from "./game-context/GameContext"
 
 export default function Index() {
+  const { currentLevel } = useGameContext()
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "flex-start",
-        alignItems: "center",
-      }}
-    >
-      <MainNavLink to="/(LevelSelect)/LevelSelect">Level Select</MainNavLink>
-      <MainNavLink to="/(options)/options">Options</MainNavLink>
-    </View>
+    <GameProvider>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "flex-start",
+          alignItems: "center",
+        }}
+      >
+        {currentLevel ? <GameInterface /> : <LevelSelect />}
+      </View>
+    </GameProvider>
   )
 }
