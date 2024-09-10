@@ -1,13 +1,13 @@
-import { useAppContext } from "@/app/app-context/AppContext"
-import { useGameContext } from "@/app/game-context/GameContext"
+import { useGameContext } from "@/app/app-context/GameContext"
+import { useLevelContext } from "@/app/game-context/LevelContext"
 import { Modal, Pressable, StyleSheet, Text, View } from "react-native"
 
 type Props = {
   isVisible: boolean
 }
 export function GameModal({ isVisible }: Props) {
-  const { level, startLevel, unpauseLevel } = useGameContext()
-  const { returnToLevelSelect, nextLevel } = useAppContext()
+  const { level, startLevel, unpauseLevel } = useLevelContext()
+  const { returnToLevelSelect, nextLevel } = useGameContext()
   if (!isVisible) return null
 
   const gameStartView = (

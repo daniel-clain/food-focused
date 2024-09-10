@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 
 // Define the type for the timer hook
-export function useGameTimer(
+export function useLevelTimer(
   initialTime: number,
   onTimerExpired: () => void,
   onTimeTickDown: (timeLeft: number) => void

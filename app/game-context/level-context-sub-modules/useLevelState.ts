@@ -1,9 +1,9 @@
+import { ActiveLevel, Level } from "@/app/game-modules/level"
 import { useEffect, useRef, useState } from "react"
-import { ActiveLevel, Level } from "../../game-modules/level"
-import { useGameTimer } from "./useGameTimer"
+import { useLevelTimer } from "./useLevelTimer"
 
-export function useGameState(selectedLevel: Level) {
-  const gameTimerInterval = useRef<NodeJS.Timeout | null>(null)
+export function useLevelState(selectedLevel: Level) {
+  const levelTimerInterval = useRef<NodeJS.Timeout | null>(null)
   const [level, setLevel] = useState<ActiveLevel>({
     timeLeft: selectedLevel.duration,
     completed: false,
@@ -15,7 +15,7 @@ export function useGameState(selectedLevel: Level) {
 
   useEffect(() => {
     return () => {
-      if (gameTimerInterval.current) clearInterval(gameTimerInterval.current)
+      if (levelTimerInterval.current) clearInterval(levelTimerInterval.current)
     }
   }, [])
   function updateLevelProperty<K extends keyof ActiveLevel>(
@@ -28,7 +28,7 @@ export function useGameState(selectedLevel: Level) {
     }))
   }
 
-  const { startTimer, stopTimer } = useGameTimer(
+  const { startTimer, stopTimer } = useLevelTimer(
     selectedLevel.duration,
     onTimerExpired,
     onTimeTickDown
@@ -72,4 +72,4 @@ export function useGameState(selectedLevel: Level) {
   }
 }
 
-export type UseGameStateType = ReturnType<typeof useGameState>
+export type UseLevelStateType = ReturnType<typeof useLevelState>

@@ -1,9 +1,9 @@
 import { Stack } from "expo-router"
-import { AppProvider } from "./app-context/AppContext"
+import { GameProvider } from "./app-context/GameContext"
 
 export default function RootLayout() {
   return (
-    <AppProvider>
+    <GameProvider>
       <Stack
         screenOptions={{
           contentStyle: {
@@ -15,6 +15,6 @@ export default function RootLayout() {
       >
         <Stack.Screen name="index" options={{ headerShown: false }} />
       </Stack>
-    </AppProvider>
+    </GameProvider>
   )
 }

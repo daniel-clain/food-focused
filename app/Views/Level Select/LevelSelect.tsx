@@ -1,10 +1,10 @@
+import { useGameContext } from "@/app/app-context/GameContext"
 import React from "react"
 import { LevelButton } from "./components/LevelButton"
 import { LevelSelectWrapper } from "./components/LevelSelectWrapper"
-import { useAppContext } from "@/app/app-context/AppContext"
 
 export function LevelSelect() {
-  const { levels } = useAppContext()
+  const { levels } = useGameContext()
   return (
     <LevelSelectWrapper>
       {levels.map((level) => (

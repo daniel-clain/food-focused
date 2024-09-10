@@ -1,11 +1,11 @@
 import { View } from "react-native"
-import { GameProvider } from "./game-context/GameContext"
+import { useGameContext } from "./app-context/GameContext"
+import { LevelProvider } from "./game-context/LevelContext"
 import { GameInterface } from "./Views/In Game/InGame"
 import { LevelSelect } from "./Views/Level Select/LevelSelect"
-import { useAppContext } from "./app-context/AppContext"
 
 export default function Index() {
-  const { currentLevel } = useAppContext()
+  const { currentLevel } = useGameContext()
   console.log("gameState.currentLevel", currentLevel)
   return (
     <View
@@ -16,9 +16,9 @@ export default function Index() {
       }}
     >
       {currentLevel ? (
-        <GameProvider {...{ level: currentLevel }}>
+        <LevelProvider {...{ level: currentLevel }}>
           <GameInterface />
-        </GameProvider>
+        </LevelProvider>
       ) : (
         <LevelSelect />
       )}

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useGameContext } from "../../game-context/GameContext"
+import { useLevelContext } from "../../game-context/LevelContext"
 import { GameCharacter } from "./components/GameCharacter"
 import { GameCharacterStats } from "./components/GameCharacterStats"
 import { GameExerciseOptions } from "./components/GameExerciseOptions"
@@ -8,10 +8,10 @@ import { GameFoodOptions } from "./components/GameFoodOptions"
 import { GameModal } from "./components/GameModal"
 import { GameTimer } from "./components/GameTimer"
 import { GameWrapper } from "./components/GameWrapper"
-import { styles } from "./gameStyles"
 import { PauseButton } from "./components/PauseButton"
+import { styles } from "./gameStyles"
 export function GameInterface() {
-  const { level } = useGameContext()
+  const { level } = useLevelContext()
   return (
     <>
       <GameModal

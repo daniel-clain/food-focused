@@ -1,4 +1,4 @@
-import { useAppContext } from "@/app/app-context/AppContext"
+import { useAppContext } from "@/app/app-context/GameContext"
 import { Level } from "@/app/game-modules/level"
 import { Pressable, StyleSheet, Text } from "react-native"
 type Props = {
