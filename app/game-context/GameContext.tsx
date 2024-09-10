@@ -1,26 +1,29 @@
 import { createContext, ReactNode, useContext } from "react"
-import { GameManager } from "./game-context-sub-modules/game-manager"
-import { Level } from "./game-context-sub-modules/level"
+import { ActiveLevel, Level } from "../game-modules/level"
 import {
   useGameState,
   UseGameStateType,
 } from "./game-context-sub-modules/useGameState"
 
 type GameContextType = {
-  levels: Level[]
-  currentLevel: Level | null
+  level: ActiveLevel
+  startLevel: () => void
+  pauseLevel: () => void
+  unpauseLevel: () => void
 }
 
 const GameContext = createContext<GameContextType | undefined>(undefined)
 
-export function GameProvider({ children }: { children: ReactNode }) {
-  const gameState: UseGameStateType = useGameState()
-  const gameManager = new GameManager(gameState)
+export function GameProvider({
+  level,
+  children,
+}: {
+  level: Level
+  children: ReactNode
+}) {
+  const gameState: UseGameStateType = useGameState(level)
 
-  const contextValue: GameContextType = {
-    levels: gameState.levels,
-    currentLevel: gameState.currentLevel,
-  }
+  const contextValue: GameContextType = gameState
   return (
     <GameContext.Provider value={contextValue}>{children}</GameContext.Provider>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { GameProvider, useGameContext } from "../../game-context/GameContext"
+import { useGameContext } from "../../game-context/GameContext"
 import { GameCharacter } from "./components/GameCharacter"
 import { GameCharacterStats } from "./components/GameCharacterStats"
 import { GameExerciseOptions } from "./components/GameExerciseOptions"
@@ -9,23 +9,21 @@ import { GameModal } from "./components/GameModal"
 import { GameTimer } from "./components/GameTimer"
 import { GameWrapper } from "./components/GameWrapper"
 import { styles } from "./gameStyles"
-
+import { PauseButton } from "./components/PauseButton"
 export function GameInterface() {
-  const game = useGameContext()
+  const { level } = useGameContext()
   return (
-    <GameProvider>
+    <>
       <GameModal
         isVisible={
-          !game.level.started ||
-          game.level.failed ||
-          game.level.completed ||
-          game.level.paused
+          !level.started || level.failed || level.completed || level.paused
         }
       />
 
       <GameWrapper>
         <div style={styles.timerContainer}>
-          <GameTimer isActive={game.level.started && !game.level.paused} />
+          <GameTimer isActive={level.started && !level.paused} />
+          <PauseButton />
         </div>
 
         <div style={styles.characterContainer}>
@@ -40,12 +38,12 @@ export function GameInterface() {
           <GameFoodOptions />
         </div>
 
-        {game.level.hasExercise && (
+        {level.hasExercise && (
           <div style={styles.exerciseOptionsContainer}>
             <GameExerciseOptions />
           </div>
         )}
       </GameWrapper>
-    </GameProvider>
+    </>
   )
 }

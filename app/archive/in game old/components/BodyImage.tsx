@@ -1,10 +1,10 @@
-import React from "react"
+/* import React from "react"
 import { Image, StyleSheet } from "react-native"
-import fatBody from "../../../assets/images/fat.jpg"
-import muscleBody from "../../../assets/images/muscle.jpg"
-import normalBody from "../../../assets/images/normal.jpg"
-import obeseBody from "../../../assets/images/obese.jpg"
-import overweightBody from "../../../assets/images/overweight.jpg"
+import fatBody from "../../../../assets/images/fat.jpg"
+import muscleBody from "../../../../assets/images/muscle.jpg"
+import normalBody from "../../../../assets/images/normal.jpg"
+import obeseBody from "../../../../assets/images/obese.jpg"
+import overweightBody from "../../../../assets/images/overweight.jpg"
 
 interface BodyImageProps {
   fatness: number
@@ -36,3 +36,4 @@ const styles = StyleSheet.create({
 })
 
 export default BodyImage
+ */
