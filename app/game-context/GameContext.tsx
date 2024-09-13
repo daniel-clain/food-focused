@@ -2,9 +2,9 @@ import { createContext, ReactNode, useContext } from "react"
 import { GameContextType } from "../game-types/gameContext"
 import { useGameController } from "./game-context-sub-modules/gameController"
 import {
-  UseGameStateType,
   useGameState,
-} from "./game-context-sub-modules/GameState"
+  UseGameStateType,
+} from "./game-context-sub-modules/gameState"
 
 const GameContext = createContext<GameContextType | undefined>(undefined)
 

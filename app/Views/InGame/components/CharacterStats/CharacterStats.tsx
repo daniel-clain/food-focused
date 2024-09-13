@@ -1,4 +1,4 @@
-import { useLevelContext } from "@/app/level-context/xevelContext"
+import { useLevelContext } from "@/app/level-context/levelContext"
 import Meter from "./components/Meter"
 
 export function CharacterStats() {

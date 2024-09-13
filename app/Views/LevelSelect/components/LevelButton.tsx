@@ -1,4 +1,4 @@
-import { useGameContext } from "@/app/game-context/xameContext"
+import { useGameContext } from "@/app/game-context/gameContext"
 import { Level } from "@/app/game-types/level"
 import { Pressable, StyleSheet, Text } from "react-native"
 type Props = {
