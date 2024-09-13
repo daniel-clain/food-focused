@@ -1,4 +1,4 @@
-import { useLevelContext } from "@/app/level-context/levelContext"
+import { useLevelContext } from "@/app/level-context/xevelContext"
 import { Image, StyleSheet } from "react-native"
 import fatBody from "../../../../../assets/images/fat.jpg"
 import muscleBody from "../../../../../assets/images/muscle.jpg"

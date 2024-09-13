@@ -1,4 +1,3 @@
-import { useGameContext } from "@/app/game-context/gameContext"
 import { Level } from "@/app/game-types/level"
 import { CharacterStats } from "@/app/game-types/stats"
 import { useEffect } from "react"
@@ -7,6 +6,7 @@ import { useLevelState } from "./levelState"
 import { useLevelTimer } from "./levelTimer"
 import { usePlayerOptions } from "./playerOptions"
 import { useStatsManager } from "./statsManager"
+import { useGameContext } from "@/app/game-context/gameContext"
 
 export function useLevelManager(selectedLevel: Level) {
   const { unlockNextLevel } = useGameContext()

@@ -1,4 +1,4 @@
-import { useLevelContext } from "@/app/level-context/levelContext"
+import { useLevelContext } from "@/app/level-context/xevelContext"
 import { Text, View } from "react-native"
 
 export function AverageHappiness() {
