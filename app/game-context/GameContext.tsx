@@ -6,21 +6,6 @@ import {
   UseGameStateType,
 } from "./game-context-sub-modules/GameState"
 
-type UILevelNavigation = {
-  returnToLevelSelect
-  goToNextLevel
-}
-type UILevelManipulation = {
-  unlockNextLevel
-  startLevel
-  pauseLevel
-  unpauseLevel
-}
-type UIPlayerOptions = {
-  selectExerciseOption
-  selectFoodOption
-}
-
 const GameContext = createContext<GameContextType | undefined>(undefined)
 
 export function GameProvider({ children }: { children: ReactNode }) {
