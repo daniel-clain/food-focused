@@ -1,4 +1,4 @@
-import { useGameContext } from "@/app/game-context/GameContext"
+import { useGameContext } from "@/app/game-context/gameContext"
 import { Level } from "@/app/game-types/level"
 import { CharacterStats } from "@/app/game-types/stats"
 import { useEffect } from "react"

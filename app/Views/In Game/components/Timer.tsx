@@ -1,4 +1,4 @@
-import { useLevelContext } from "@/app/level-context/LevelContext"
+import { useLevelContext } from "@/app/level-context/levelContext"
 import { Text, View } from "react-native"
 
 export function Timer() {

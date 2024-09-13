@@ -1,4 +1,5 @@
-import { createLevel, Level } from "../game-types/level"
+import { Level } from "../game-types/level"
+import { createLevel } from "./levelCreator"
 
 const testLevels: Level[] = [
   createLevel({

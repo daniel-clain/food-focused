@@ -1,4 +1,4 @@
-import { useLevelContext } from "@/app/level-context/LevelContext"
+import { useLevelContext } from "@/app/level-context/levelContext"
 import { Text, TouchableOpacity, View } from "react-native"
 
 export function ExerciseOptions() {

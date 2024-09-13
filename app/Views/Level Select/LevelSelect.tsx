@@ -1,4 +1,4 @@
-import { useGameContext } from "@/app/game-context/GameContext"
+import { useGameContext } from "@/app/game-context/gameContext"
 import React from "react"
 import { LevelButton } from "./components/LevelButton"
 import { LevelSelectWrapper } from "./components/LevelSelectWrapper"

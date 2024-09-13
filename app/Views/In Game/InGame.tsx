@@ -1,6 +1,6 @@
 import React from "react"
 import { StyleSheet, View } from "react-native"
-import { useLevelContext } from "../../level-context/LevelContext"
+import { useLevelContext } from "../../level-context/levelContext"
 import { AverageHappiness } from "./components/AverageHappiness/AverageHappiness"
 import { Character } from "./components/Character/Character"
 import { CharacterStats } from "./components/CharacterStats/CharacterStats"

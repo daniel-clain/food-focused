@@ -21,28 +21,6 @@ export type StatNames =
   | "foodAddiction"
   | "fullness"
 
-export function createLevel(overrides: LevelArgs): Level {
-  return {
-    locked: true,
-    duration: 5,
-    initialStats: {
-      happiness: 10,
-      energy: 10,
-      fatness: 10,
-      muscleTone: 0,
-      health: 50,
-      foodAddiction: 0,
-    },
-    goalHappiness: 80,
-    exerciseOptionsEnabled: false,
-    ...overrides,
-    visibleStats: [
-      "happiness",
-      ...(overrides.visibleStats ? overrides.visibleStats : []),
-    ],
-  }
-}
-
 export type LevelState = Level & {
   averageHappiness: number
   timeLeft: number
@@ -55,7 +33,7 @@ export type LevelState = Level & {
   exerciseOptions: ExerciseOption[]
 }
 
-type LevelArgs = Partial<Omit<Level, "number" | "characterStats">> &
+export type LevelArgs = Partial<Omit<Level, "number" | "characterStats">> &
   Pick<Level, "number"> & {
     visibleStats?: Exclude<StatNames, "happiness">[]
   }

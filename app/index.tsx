@@ -1,5 +1,5 @@
-import { useGameContext } from "./game-context/GameContext"
-import { LevelProvider } from "./level-context/LevelContext"
+import { useGameContext } from "./game-context/gameContext"
+import { LevelProvider } from "./level-context/levelContext"
 import { InGame } from "./Views/In Game/InGame"
 import { LevelSelect } from "./Views/Level Select/LevelSelect"
 
