@@ -1,0 +1,14 @@
+- different types
+
+  - state, controller, context
+
+- dos/donts, relationships
+  - context
+    ~ wraps components and exposes interface
+  - controller
+    ~ needs ref to set state
+    ~ exposes functions to context
+  - state
+    ~ doesnt have any other dependency
+    ~ controller uses it
+    ~ exposes state to context

@@ -11,7 +11,7 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "app/game-context/level-context-sub-modules"
+    "app/level-context/level-context-sub-modules"
   ],
   "exclude": ["app/archive/**/*"]
 }

@@ -10,3 +10,6 @@ Code Oranisation:
 
     
 
+Code Fixes:
+  ☐ level shouldnt need number, should be relative to array index
+    ☐ shouldnt have to specify first level as unlocked, 0 index of levels should be unlocked always by default

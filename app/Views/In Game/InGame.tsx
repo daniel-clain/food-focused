@@ -1,49 +1,68 @@
 import React from "react"
-
-import { useLevelContext } from "../../game-context/LevelContext"
-import { GameCharacter } from "./components/GameCharacter"
-import { GameCharacterStats } from "./components/GameCharacterStats"
-import { GameExerciseOptions } from "./components/GameExerciseOptions"
-import { GameFoodOptions } from "./components/GameFoodOptions"
-import { GameModal } from "./components/GameModal"
-import { GameTimer } from "./components/GameTimer"
+import { StyleSheet, View } from "react-native"
+import { useLevelContext } from "../../level-context/LevelContext"
+import { AverageHappiness } from "./components/AverageHappiness/AverageHappiness"
+import { Character } from "./components/Character/Character"
+import { CharacterStats } from "./components/CharacterStats/CharacterStats"
+import { ExerciseOptions } from "./components/ExerciseOptions"
+import { FoodOptions } from "./components/FoodOptions"
+import { GameModal } from "./components/GameModal/GameModal"
 import { GameWrapper } from "./components/GameWrapper"
 import { PauseButton } from "./components/PauseButton"
-import { styles } from "./gameStyles"
-export function GameInterface() {
-  const { level } = useLevelContext()
+import { Timer } from "./components/Timer"
+
+export function InGame() {
+  const { levelState } = useLevelContext()
   return (
-    <>
+    <GameWrapper>
       <GameModal
         isVisible={
-          !level.started || level.failed || level.completed || level.paused
+          !levelState.started ||
+          levelState.failed ||
+          levelState.completed ||
+          levelState.paused
         }
       />
+      <View style={styles.headerContainer}>
+        <AverageHappiness />
+        <Timer />
+        <PauseButton />
+      </View>
 
-      <GameWrapper>
-        <div style={styles.timerContainer}>
-          <GameTimer isActive={level.started && !level.paused} />
-          <PauseButton />
-        </div>
+      <View style={styles.characterContainer}>
+        <Character />
+      </View>
 
-        <div style={styles.characterContainer}>
-          <GameCharacter />
-        </div>
+      <View style={styles.characterStatsContainer}>
+        <CharacterStats />
+      </View>
 
-        <div style={styles.characterStatsContainer}>
-          <GameCharacterStats />
-        </div>
+      <View style={styles.foodOptionsContainer}>
+        <FoodOptions />
+      </View>
 
-        <div style={styles.foodOptionsContainer}>
-          <GameFoodOptions />
-        </div>
-
-        {level.hasExercise && (
-          <div style={styles.exerciseOptionsContainer}>
-            <GameExerciseOptions />
-          </div>
-        )}
-      </GameWrapper>
-    </>
+      {levelState.exerciseOptionsEnabled && (
+        <View style={styles.exerciseOptionsContainer}>
+          <ExerciseOptions />
+        </View>
+      )}
+    </GameWrapper>
   )
 }
+
+const styles = StyleSheet.create({
+  headerContainer: {
+    flexDirection: "row",
+    gap: 10,
+    width: "100%",
+    padding: 10,
+    backgroundColor: "#eeeeee",
+    borderBottomWidth: 2,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  characterContainer: {},
+  characterStatsContainer: {},
+  foodOptionsContainer: {},
+  exerciseOptionsContainer: {},
+})

@@ -1,0 +1,31 @@
+* aditional factor for late game
+  - socail, physical and job goals
+  - food and exercise cost money, job makes money
+  - happiness spikes affect overall average, iregualr junk food expecially good when having ah shit time
+
+
+* instead of food giving flat happiness, its a relative weighting
+  - the more ur addicted to that food the more boost u get
+  - the hungrier you are the more boost you get
+* you can eat while ur full and max happy, and the callories still gett added regardless, energy shouldnt be capped at 100 and have excess callories not be included, allow over eating mechanic to mimic real life, the player should eat for the happyness and ignore the excess callories theyre eating
+
+
+* core idea of the game demonstrated throught find tuned maths
+  - there should be a turning point in the game where the player realises that eating food that makes them happy is not going to work in making them happy in the long run
+  - however trying to brute force excersise and heathy food should also not work
+  - the deeper the levels go, the more the player has to find the balance of eating, exercise and hapyness
+
+* when i asked chat gpt about game level progression, its started talking about how the effects of junk food and exercise and decay rate change over time. i didnt like this idea because it doesnt really reflect real life and doesnt help when the user is trying to learn the level
+  - i feel the key is the level duration, where short term imediate gratification helps pass the level, but long term it will screw you
+  - but i did express to chat gpt that i want the game to have difficulty curve and thats the solution it came up with. i have to find the balance between realistic and logical, vs fun and incrementing difficulty and complexity
+
+
+* key factors for level difficulty curve
+  - level duration, starting conditions, goal
+
+
+* win condition brainstorming
+  - final happiness and average happiness has cons
+    ~ weighted happiness based on recent average not overall
+
+  

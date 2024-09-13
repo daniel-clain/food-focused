@@ -1,11 +1,11 @@
-import { useAppContext } from "@/app/app-context/GameContext"
-import { Level } from "@/app/game-modules/level"
+import { useGameContext } from "@/app/game-context/GameContext"
+import { Level } from "@/app/game-types/level"
 import { Pressable, StyleSheet, Text } from "react-native"
 type Props = {
   level: Level
 }
 export function LevelButton({ level }: Props) {
-  const { selectLevel } = useAppContext()
+  const { selectLevel } = useGameContext()
   return (
     <Pressable
       style={[styles.button, level.locked && styles.buttonDisabled]}
